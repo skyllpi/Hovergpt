@@ -1,0 +1,6 @@
+crewai
+crewai_tools
+streamlit
+python-dotenv
+groq
+youtube-transcript-api
