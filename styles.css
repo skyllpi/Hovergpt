@@ -1,0 +1,72 @@
+/* YouTube Summary Generator Styles */
+
+.yt-summary-container {
+  position: absolute;
+  z-index: 9999;
+  background-color: rgba(33, 33, 33, 0.95);
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 14px;
+  padding: 12px;
+  max-width: 400px;
+  min-height: 60px;
+  transition: opacity 0.2s ease-in-out;
+  overflow: hidden;
+  margin-top: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: none; /* Prevent clicking through the container */
+}
+
+/* Ensure the container is always visible within the viewport */
+.yt-summary-container.right-edge {
+  right: 0;
+  left: auto !important;
+}
+
+.yt-summary-container.bottom-edge {
+  bottom: calc(100% + 4px);
+  top: auto !important;
+}
+
+.yt-summary-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  position: relative;
+}
+
+.yt-summary-loading::before {
+  content: 'Generating summary...';
+  margin-right: 10px;
+}
+
+.yt-summary-loading::after {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s linear infinite;
+}
+
+.yt-summary-content {
+  line-height: 1.5;
+  padding: 4px 0;
+}
+
+.yt-summary-error {
+  color: #ff6b6b;
+  padding: 8px 0;
+  text-align: center;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+} 

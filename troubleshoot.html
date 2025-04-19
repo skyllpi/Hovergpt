@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Summary Generator - Troubleshooting</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      color: #333;
+    }
+    
+    h1 {
+      color: #cc0000;
+      margin-bottom: 20px;
+    }
+    
+    h2 {
+      margin-top: 30px;
+      color: #333;
+    }
+    
+    .diagnostic-section {
+      background-color: #f5f5f5;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 20px 0;
+    }
+    
+    .status {
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 4px;
+    }
+    
+    .status.success {
+      background-color: #d4edda;
+      color: #155724;
+    }
+    
+    .status.warning {
+      background-color: #fff3cd;
+      color: #856404;
+    }
+    
+    .status.error {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+    
+    .fix-button {
+      background-color: #cc0000;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    
+    .fix-button:hover {
+      background-color: #aa0000;
+    }
+    
+    #log {
+      border: 1px solid #ddd;
+      padding: 10px;
+      height: 200px;
+      overflow-y: auto;
+      background-color: #f9f9f9;
+      margin-top: 20px;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>YouTube Summary Generator - Troubleshooting</h1>
+  
+  <p>This page will help diagnose issues with the YouTube Summary Generator extension.</p>
+  
+  <div class="diagnostic-section">
+    <h2>System Check</h2>
+    
+    <div id="extension-status" class="status">Checking extension status...</div>
+    <div id="api-key-status" class="status">Checking API key...</div>
+    <div id="background-status" class="status">Checking background script...</div>
+    <div id="content-script-status" class="status">Checking content script...</div>
+    
+    <button id="run-diagnostics" class="fix-button">Run Diagnostics</button>
+  </div>
+  
+  <h2>Common Issues</h2>
+  
+  <h3>Error: "Could not establish connection. Receiving end does not exist."</h3>
+  <p>This error occurs when the extension tries to communicate with a content script that hasn't been loaded yet.</p>
+  <p><strong>Solution:</strong> Make sure you're on a YouTube page before trying to use the extension. If you set up your API key while not on YouTube, reload any YouTube tabs you have open.</p>
+  
+  <h3>No summary appears when hovering</h3>
+  <p>This could be due to several reasons:</p>
+  <ul>
+    <li>Your API key is not valid or not set up</li>
+    <li>There's a CORS (Cross-Origin Resource Sharing) issue</li>
+    <li>The YouTube page structure has changed</li>
+    <li>The extension didn't initialize properly</li>
+  </ul>
+  <p><strong>Solution:</strong> Click the extension icon, verify your API key is correct, save settings, and refresh the YouTube page.</p>
+  
+  <h3>API key errors</h3>
+  <p>If you're seeing API key errors:</p>
+  <ul>
+    <li>Make sure you've entered the correct API key from Google Gemini</li>
+    <li>Check if your API key has the necessary permissions</li>
+    <li>Verify your API key hasn't expired or reached its quota limit</li>
+  </ul>
+  
+  <h3>API model errors</h3>
+  <p>This extension uses the Gemini 2.0 Flash model. If you see errors about the model not being found:</p>
+  <ul>
+    <li>Make sure your API key has access to the "gemini-2.0-flash" model</li>
+    <li>Verify that you're using the correct API version (currently v1beta)</li>
+    <li>Check that your API key has appropriate permissions for generateContent</li>
+    <li>Consider checking the <a href="https://ai.google.dev/models/gemini" target="_blank">Gemini documentation</a> for updates about model availability</li>
+  </ul>
+  
+  <h2>Debug Log</h2>
+  <div id="log"></div>
+  
+  <script src="troubleshoot.js"></script>
+</body>
+</html> 

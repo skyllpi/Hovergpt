@@ -1,0 +1,158 @@
+/* Popup styles for YouTube Summary Generator */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #f9f9f9;
+  width: 350px;
+  min-height: 300px;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 16px;
+}
+
+h1 {
+  color: #cc0000;
+  font-size: 18px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.settings {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.form-group {
+  margin-bottom: 12px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+input[type="password"],
+input[type="number"] {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #cc0000;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+button {
+  background-color: #cc0000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #aa0000;
+}
+
+#status-message {
+  text-align: center;
+  min-height: 20px;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+#status-message.success {
+  color: #28a745;
+}
+
+#status-message.error {
+  color: #dc3545;
+}
+
+#status-message.warning {
+  color: #ffc107;
+}
+
+.info {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.4;
+}
+
+.info p {
+  margin-bottom: 8px;
+}
+
+.info a {
+  color: #065fd4;
+  text-decoration: none;
+}
+
+.info a:hover {
+  text-decoration: underline;
+}
+
+/* YouTube notice styles */
+.youtube-notice {
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.youtube-notice.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.youtube-notice.warning {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+}
+
+.youtube-notice.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.youtube-notice a {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.form-note {
+  display: block;
+  font-size: 11px;
+  color: #666;
+  margin-top: 4px;
+  font-style: italic;
+} 

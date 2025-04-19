@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Summary Generator</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>YouTube Summary Generator</h1>
+    <div class="settings">
+      <div class="form-group">
+        <label for="api-key">Gemini API Key:</label>
+        <input type="password" id="api-key" placeholder="Enter your Gemini API key">
+        <small class="form-note">Requires access to gemini-2.0-flash model</small>
+      </div>
+      <div class="form-group">
+        <label for="hover-delay">Hover Delay (ms):</label>
+        <input type="number" id="hover-delay" min="500" max="5000" step="100" value="1000">
+      </div>
+      <div class="form-group button-group">
+        <button id="save-btn">Save Settings</button>
+      </div>
+      <div id="status-message"></div>
+    </div>
+    <div class="info">
+      <p>Hover over YouTube video thumbnails on the home page to generate AI summaries.</p>
+      <p><a href="https://makersuite.google.com/app/apikey" target="_blank">Get a Gemini API key here</a></p>
+      <p><a href="#" id="troubleshoot-link">Troubleshoot issues</a></p>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html> 
